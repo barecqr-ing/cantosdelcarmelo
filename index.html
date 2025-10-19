@@ -2,108 +2,76 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cantos del Carmelo</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Diseño minimalista ===== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f9f9f9;
+      color: #222;
+    }
+
+    h1 {
+      text-align: center;
+      color: #900; /* rojo oscuro */
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
+      margin-top: 30px;
+      color: #900;
+    }
+
+    .song-item {
+      margin: 10px 0 20px 0;
+      padding: 10px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .song-item h3 {
+      margin: 0 0 5px 0;
+    }
+
+    a {
+      color: #900;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    audio {
+      width: 100%;
+      margin-top: 5px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        margin: 10px;
+      }
+      audio {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Cantos del Carmelo</h1>
-  </header>
 
-  <main>
-    <section id="song-list">
-      <ul id="songs"></ul>
-    </section>
+  <h1>Cantos del Carmelo</h1>
 
-    <section id="song-view" class="hidden">
-      <h2 id="song-title"></h2>
-      <pre id="song-lyrics"></pre>
-      <audio id="song-audio" controls></audio>
-      <br>
-      <a id="download-link" href="#" download>Descargar letra</a>
-      <br><br>
-      <button id="back-btn">Volver al índice</button>
-    </section>
-  </main>
+  <!-- Contenedor donde se cargarán las canciones -->
+  <div id="songs-container"></div>
 
-  <!-- Firebase SDK -->
-  <script type="module">
-    // Importar Firebase desde CDN
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-    import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
+  <!-- Script JS -->
+  <script src="script.js"></script>
 
-    const firebaseConfig = {
-      apiKey: "TU_API_KEY",
-      authDomain: "cantosdelcarmelo.firebaseapp.com",
-      projectId: "cantosdelcarmelo",
-      storageBucket: "cantosdelcarmelo.appspot.com",
-      messagingSenderId: "XXXXXXXX",
-      appId: "XXXXXXXX"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-
-    const listEl = document.getElementById("songs");
-    const listSection = document.getElementById("song-list");
-    const viewSection = document.getElementById("song-view");
-    const titleEl = document.getElementById("song-title");
-    const lyricsEl = document.getElementById("song-lyrics");
-    const audioEl = document.getElementById("song-audio");
-    const downloadLink = document.getElementById("download-link");
-    const backBtn = document.getElementById("back-btn");
-
-    async function loadSongs() {
-      const snapshot = await getDocs(collection(db, "songs"));
-      const songs = snapshot.docs.map(doc => doc.data());
-
-      // Agrupar por categorías
-      const grouped = {};
-      songs.forEach(song => {
-        song.sections.forEach(section => {
-          if (!grouped[section]) grouped[section] = [];
-          grouped[section].push(song);
-        });
-      });
-
-      // Ordenar secciones alfabéticamente
-      Object.keys(grouped).sort().forEach(section => {
-        const h3 = document.createElement("h3");
-        h3.textContent = section;
-        listEl.appendChild(h3);
-
-        // Ordenar canciones alfabéticamente por título
-        grouped[section].sort((a, b) => a.title.localeCompare(b.title));
-
-        grouped[section].forEach(song => {
-          const li = document.createElement("li");
-          li.textContent = song.title;
-          li.onclick = () => showSong(song);
-          listEl.appendChild(li);
-        });
-      });
-    }
-
-    async function showSong(song) {
-      const response = await fetch(song.lyricsUrl);
-      const text = await response.text();
-
-      titleEl.textContent = song.title;
-      lyricsEl.textContent = text;
-      audioEl.src = song.audioUrl;
-      downloadLink.href = song.lyricsUrl;
-      downloadLink.download = `${song.title}.txt`;
-
-      listSection.classList.add("hidden");
-      viewSection.classList.remove("hidden");
-    }
-
-    backBtn.onclick = () => {
-      viewSection.classList.add("hidden");
-      listSection.classList.remove("hidden");
-    }
-
-    loadSongs();
-  </script>
 </body>
 </html>
