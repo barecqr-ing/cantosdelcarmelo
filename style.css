@@ -1,0 +1,41 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0 20px;
+  background-color: #fff;
+  color: #222;
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+h1 {
+  margin: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  cursor: pointer;
+  padding: 5px 0;
+}
+
+li:hover {
+  color: #a00;
+  text-decoration: underline;
+}
+
+pre {
+  background-color: #f9f9f9;
+  padding: 10px;
+  white-space: pre-wrap;
+}
