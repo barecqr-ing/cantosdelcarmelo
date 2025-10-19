@@ -39,3 +39,8 @@ pre {
   padding: 10px;
   white-space: pre-wrap;
 }
+#lyrics {
+  white-space: pre-wrap; /* mantiene saltos de línea y espacios */
+}
+
+
