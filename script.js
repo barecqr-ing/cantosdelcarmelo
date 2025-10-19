@@ -1,55 +1,68 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.0.0/firebase-firestore.js";
+// ================================
+// CONFIGURACIÓN DE CANCIONES
+// ================================
+const songs = [
+  { title: "Alabare", lyrics: "lyrics/alabare.txt", audio: "audio/alabare.mp3", sections: ["Entrada"] },
+  { title: "Gloria a Dios", lyrics: "lyrics/gloria.txt", audio: "audio/gloria.mp3", sections: ["Gloria"] },
+  { title: "Aleluya", lyrics: "lyrics/aleluya.txt", audio: "audio/aleluya.mp3", sections: ["Salida"] },
+  { title: "María Reina", lyrics: "lyrics/maria.txt", audio: "audio/maria.mp3", sections: ["Marianas"] },
+  { title: "Santo Espíritu", lyrics: "lyrics/espiritu.txt", audio: "audio/espiritu.mp3", sections: ["Espiritu Santo"] },
+  { title: "Cordero de Dios", lyrics: "lyrics/cordero.txt", audio: "audio/cordero.mp3", sections: ["Cordero", "Comunión"] },
+  // Agrega aquí todas las canciones
+];
 
-const firebaseConfig = {
-  apiKey: "TU_API_KEY",
-  authDomain: "cantosdelcarmelo.firebaseapp.com",
-  projectId: "cantosdelcarmelo",
-  storageBucket: "cantosdelcarmelo.appspot.com",
-  messagingSenderId: "XXXXXXX",
-  appId: "XXXXXXXXX"
-};
+// ================================
+// CONFIGURACIÓN DE CATEGORÍAS
+// ================================
+const categories = [
+  "Entrada",
+  "Perdón",
+  "Gloria",
+  "Salmos",
+  "Aclamación",
+  "Ofertorio",
+  "Santo",
+  "Cordero",
+  "Comunión",
+  "Marianas",
+  "Espiritu Santo",
+  "Otras"
+];
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-const listSection = document.getElementById("song-list");
-const viewSection = document.getElementById("song-view");
-const listEl = document.getElementById("songs");
-const titleEl = document.getElementById("song-title");
-const lyricsEl = document.getElementById("song-lyrics");
-const audioEl = document.getElementById("song-audio");
-const backBtn = document.getElementById("back");
-const downloadLink = document.getElementById("download-link");
-
-async function loadSongs() {
-  const snapshot = await getDocs(collection(db, "songs"));
-  snapshot.forEach((doc) => {
-    const song = doc.data();
-    const li = document.createElement("li");
-    li.textContent = song.title;
-    li.onclick = () => showSong(song);
-    listEl.appendChild(li);
+// ================================
+// FUNCIONES
+// ================================
+function loadSongs() {
+  const container = document.getElementById("songs-container");
+  
+  categories.forEach(category => {
+    const catSongs = songs
+      .filter(song => song.sections.includes(category))
+      .sort((a,b) => a.title.localeCompare(b.title));
+    
+    if (catSongs.length > 0) {
+      // Crear sección de categoría
+      const catDiv = document.createElement("div");
+      catDiv.innerHTML = `<h2>${category}</h2>`;
+      
+      // Agregar canciones
+      catSongs.forEach(song => {
+        const div = document.createElement("div");
+        div.classList.add("song-item");
+        div.innerHTML = `
+          <h3>${song.title}</h3>
+          <p><a href="${song.lyrics}" download>Descargar letra</a></p>
+          <audio controls>
+            <source src="${song.audio}" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+        `;
+        catDiv.appendChild(div);
+      });
+      
+      container.appendChild(catDiv);
+    }
   });
 }
 
-async function showSong(song) {
-  const response = await fetch(song.lyricsUrl);
-  const text = await response.text();
-
-  titleEl.textContent = song.title;
-  lyricsEl.textContent = text;
-  audioEl.src = song.audioUrl;
-  downloadLink.href = song.lyricsUrl;
-  downloadLink.download = `${song.title}.txt`;
-
-  listSection.classList.add("hidden");
-  viewSection.classList.remove("hidden");
-}
-
-backBtn.onclick = () => {
-  viewSection.classList.add("hidden");
-  listSection.classList.remove("hidden");
-};
-
-loadSongs();
+window.onload = loadSongs;
