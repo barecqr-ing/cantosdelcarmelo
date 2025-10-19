@@ -6,37 +6,53 @@
   <title>Cantos del Carmelo</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ===== Diseño minimalista ===== */
     body {
       font-family: Arial, sans-serif;
+      background: #f9f9f9;
       margin: 20px;
-      background-color: #f9f9f9;
       color: #222;
     }
 
     h1 {
       text-align: center;
-      color: #900; /* rojo oscuro */
+      color: #900;
       margin-bottom: 40px;
     }
 
-    h2 {
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 5px;
-      margin-top: 30px;
-      color: #900;
-    }
-
-    .song-item {
-      margin: 10px 0 20px 0;
-      padding: 10px;
-      background-color: #fff;
+    .section {
+      margin-bottom: 10px;
       border-radius: 8px;
+      background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
-    .song-item h3 {
-      margin: 0 0 5px 0;
+    .section-header {
+      padding: 15px;
+      cursor: pointer;
+      font-weight: bold;
+      background: #f1f1f1;
+      color: #900;
+      border-radius: 8px;
+    }
+
+    .section-content {
+      display: none;
+      padding: 10px 15px;
+    }
+
+    .song-item {
+      margin: 5px 0;
+      padding: 5px;
+      border-bottom: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    .song-item:hover {
+      background: #f0f0f0;
+    }
+
+    .song-details {
+      margin: 5px 0 15px 10px;
     }
 
     a {
@@ -52,26 +68,14 @@
       width: 100%;
       margin-top: 5px;
     }
-
-    @media (max-width: 600px) {
-      body {
-        margin: 10px;
-      }
-      audio {
-        width: 100%;
-      }
-    }
   </style>
 </head>
 <body>
-
   <h1>Cantos del Carmelo</h1>
 
-  <!-- Contenedor donde se cargarán las canciones -->
-  <div id="songs-container"></div>
+  <!-- Contenedor principal de las secciones -->
+  <div id="sections-container"></div>
 
-  <!-- Script JS -->
   <script src="script.js"></script>
-
 </body>
 </html>
