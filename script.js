@@ -4,9 +4,11 @@
 const songs = [
   // Agrega aquí todas las canciones
   { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] },
+  { title: "Aquí estámos Señor", lyrics: "lyrics/aqui-estamos.txt", audio: "audio/aqui-estamos.mp3", sections: ["Entrada"] },
   { title: "Aleluya (Anunciamos)", lyrics: "lyrics/aleluya-anunciamos.txt", audio: "audio/aleluya-anunciamos.mp3", sections: ["Aclamación"] },
   { title: "Aleluya (Brasil)", lyrics: "lyrics/aleluya-brasil.txt", audio: "audio/aleluya-brasil.mp3", sections: ["Aclamación"] },
-  { title: "Canta Aleluya", lyrics: "lyrics/canta-aleluya.txt", audio: "audio/canta-aleluya.mp3", sections: ["Aclamación"] }
+  { title: "Canta Aleluya", lyrics: "lyrics/canta-aleluya.txt", audio: "audio/canta-aleluya.mp3", sections: ["Aclamación"] },
+  { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Comunión"] },
 ];
 
 // ================================
@@ -129,6 +131,7 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
