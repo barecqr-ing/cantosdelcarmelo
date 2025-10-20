@@ -9,6 +9,14 @@ const songs = [
   { title: "Aleluya (Brasil)", lyrics: "lyrics/aleluya-brasil.txt", audio: "audio/aleluya-brasil.mp3", sections: ["Aclamación"] },
   { title: "Canta Aleluya", lyrics: "lyrics/canta-aleluya.txt", audio: "audio/canta-aleluya.mp3", sections: ["Aclamación"] },
   { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Comunión"] },
+  { title: "Camino Firme", lyrics: "lyrics/camino-firme.txt", audio: "audio/camino-firme.mp3", sections: ["Comunión"] },
+  { title: "Canta Iglesia", lyrics: "lyrics/canta-iglesia.txt", audio: "audio/canta-iglesia.mp3", sections: ["Comunión"] },
+  { title: "Cinco Panes", lyrics: "lyrics/cinco-panes.txt", audio: "audio/cinco-panes.mp3", sections: ["Comunión"] },
+  { title: "Cordero Aravena", lyrics: "lyrics/cordero-aravena.txt", audio: "audio/cordero-aravena.mp3", sections: ["Comunión"] },
+  { title: "Cordero Bianchi", lyrics: "lyrics/cordero-bianchi.txt", audio: "audio/cordero-bianchi.mp3", sections: ["Comunión"] },
+  { title: "Cordero de Dios Cordero", lyrics: "lyrics/cordero-dios.txt", audio: "audio/cordero-dios.mp3", sections: ["Comunión"] },
+  { title: "Cordero Tonada", lyrics: "lyrics/cordero-tonada.txt", audio: "audio/cordero-tonada.mp3", sections: ["Comunión"] },
+  { title: "Cordero Mamut", lyrics: "lyrics/cordero-mamut.txt", audio: "audio/cordero-mamut.mp3", sections: ["Comunión"] }  
 ];
 
 // ================================
@@ -131,6 +139,7 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
