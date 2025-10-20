@@ -29,6 +29,7 @@ const categories = [
   "Gloria",
   "Salmos",
   "Aclamación",
+  "Post Aclamación",
   "Ofertorio",
   "Santo",
   "Cordero",
@@ -38,7 +39,7 @@ const categories = [
   "Folclore",
   "Otras"
 ];
-const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espiritu Santo","Folclore","Otras"];
+const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Post Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espiritu Santo","Folclore","Otras"];
 
 function loadSections() {
   const container = document.getElementById("sections-container");
@@ -141,6 +142,7 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
