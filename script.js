@@ -1,26 +1,20 @@
-/* -----------------------------------------
-   script.js — Cantos del Carmelo
-   -----------------------------------------
-   Funciona con index.html y song.html
------------------------------------------ */
-
-// 🔹 Listado de canciones (por ahora 2 ejemplos)
+/ ================================
+// CONFIGURACIÓN DE CANCIONES
+// ================================
 const songs = [
-  {
-    title: "Abre tu jardín",
-    category: "Entrada",
-    txt: "lyrics/abre-tu-jardin.txt",
-    audio: "audio/abre-tu-jardin.mp3"
-  },
-  {
-    title: "Aleluya Anunciamos",
-    category: "Aclamación",
-    txt: "lyrics/ALELUYA-ANUNCIAMOS.txt",
-    audio: "audio/ALELUYA-ANUNCIAMOS.mp3"
-  }
+  { title: "Alabare", lyrics: "lyrics/alabare.txt", audio: "audio/alabare.mp3", sections: ["Entrada"] },
+  { title: "Gloria a Dios", lyrics: "lyrics/gloria.txt", audio: "audio/gloria.mp3", sections: ["Gloria"] },
+  { title: "Aleluya", lyrics: "lyrics/aleluya.txt", audio: "audio/aleluya.mp3", sections: ["Salida"] },
+  { title: "María Reina", lyrics: "lyrics/maria.txt", audio: "audio/maria.mp3", sections: ["Marianas"] },
+  { title: "Santo Espíritu", lyrics: "lyrics/espiritu.txt", audio: "audio/espiritu.mp3", sections: ["Espiritu Santo"] },
+  { title: "Cordero de Dios", lyrics: "lyrics/cordero.txt", audio: "audio/cordero.mp3", sections: ["Cordero", "Comunión"] },
+  // Agrega aquí todas las canciones
+  { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] }
 ];
 
-// 🔹 Categorías
+// ================================
+// CONFIGURACIÓN DE CATEGORÍAS
+// ================================
 const categories = [
   "Entrada",
   "Perdón",
@@ -32,95 +26,109 @@ const categories = [
   "Cordero",
   "Comunión",
   "Marianas",
-  "Espíritu Santo",
+  "Espiritu Santo",
   "Otras"
 ];
+const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espiritu Santo","Otras"];
 
-// --------------------------------------------------
-// 1️⃣ Función para index.html → mostrar categorías y canciones
-// --------------------------------------------------
-function loadIndex() {
-  const container = document.getElementById("categories");
+function loadSections() {
+  const container = document.getElementById("sections-container");
 
-  categories.forEach(cat => {
-    // crear bloque de categoría
-    const section = document.createElement("div");
-    section.classList.add("category");
+// ================================
+// FUNCIONES
+// ================================
+function loadSongs() {
+  const container = document.getElementById("songs-container");
+  
+  categories.forEach(category => {
+    const catSongs = songs
+      .filter(song => song.sections.includes(category))
+      .sort((a,b) => a.title.localeCompare(b.title));
+    
+    if (catSongs.length > 0) {
+      // Crear sección de categoría
+      const catDiv = document.createElement("div");
+      catDiv.innerHTML = `<h2>${category}</h2>`;
+      
+      // Agregar canciones
+      catSongs.forEach(song => {
+        const div = document.createElement("div");
+        div.classList.add("song-item");
+        div.innerHTML = `
+          <h3>${song.title}</h3>
+          <p><a href="${song.lyrics}" download>Descargar letra</a></p>
+          <audio controls>
+            <source src="${song.audio}" type="audio/mpeg">
+            Tu navegador no soporta audio.
+          </audio>
+        `;
+        catDiv.appendChild(div);
+    const sectionDiv = document.createElement("div");
+    sectionDiv.classList.add("section");
 
-    const title = document.createElement("h2");
-    title.textContent = cat;
-    section.appendChild(title);
+    const header = document.createElement("div");
+    header.classList.add("section-header");
+    header.textContent = category;
 
-    // filtrar canciones
-    const ul = document.createElement("ul");
-    songs
-      .filter(song => song.category === cat)
-      .sort((a, b) => a.title.localeCompare(b.title))
-      .forEach(song => {
-        const li = document.createElement("li");
-        const link = document.createElement("a");
-        link.textContent = song.title;
-        link.href = `song.html?song=${encodeURIComponent(song.title)}`;
-        li.appendChild(link);
-        ul.appendChild(li);
+    const content = document.createElement("div");
+    content.classList.add("section-content");
+
+    const catSongs = songs.filter(s => s.sections.includes(category))
+                          .sort((a,b) => a.title.localeCompare(b.title));
+
+    catSongs.forEach(song => {
+      const songDiv = document.createElement("div");
+      songDiv.classList.add("song-item");
+      songDiv.textContent = song.title;
+
+      const details = document.createElement("div");
+      details.classList.add("song-details");
+      details.style.display = "none";
+      details.innerHTML = `
+        <p>Cargando letra...</p>
+        <p><a href="${song.lyrics}" download>Descargar letra</a></p>
+        <audio controls>
+          <source src="${song.audio}" type="audio/mpeg">
+          Tu navegador no soporta audio.
+        </audio>
+      `;
+
+      // Mostrar detalles y cargar letra al hacer clic
+      songDiv.addEventListener("click", () => {
+        if(details.style.display === "none") {
+          // Leer el archivo .txt
+          fetch(song.lyrics)
+            .then(response => response.text())
+            .then(text => {
+              details.querySelector("p").textContent = text;
+            })
+            .catch(err => {
+              details.querySelector("p").textContent = "No se pudo cargar la letra.";
+              console.error(err);
+            });
+
+          details.style.display = "block";
+        } else {
+          details.style.display = "none";
+        }
       });
+      
+      container.appendChild(catDiv);
+    }
 
-    section.appendChild(ul);
-    container.appendChild(section);
+      content.appendChild(songDiv);
+      content.appendChild(details);
+    });
+
+    header.addEventListener("click", () => {
+      content.style.display = content.style.display === "none" ? "block" : "none";
+    });
+
+    sectionDiv.appendChild(header);
+    sectionDiv.appendChild(content);
+    container.appendChild(sectionDiv);
   });
 }
 
-// --------------------------------------------------
-// 2️⃣ Función para song.html → mostrar letra y audio
-// --------------------------------------------------
-function loadSongPage() {
-  const params = new URLSearchParams(window.location.search);
-  const songTitle = params.get("song");
-
-  if (!songTitle) return;
-
-  const song = songs.find(s => s.title === songTitle);
-  if (!song) {
-    document.getElementById("lyrics").textContent = "Canción no encontrada.";
-    return;
-  }
-
-  // Mostrar título
-  document.getElementById("song-title").textContent = song.title;
-
-  // Mostrar audio
-  const audio = document.getElementById("song-audio");
-  audio.src = song.audio;
-
-  // Mostrar letra
-  fetch(song.txt)
-    .then(response => response.text())
-    .then(text => {
-      // Mostrar texto con saltos de línea y tildes
-      const lyricsDiv = document.getElementById("lyrics");
-      lyricsDiv.textContent = text;
-      lyricsDiv.style.whiteSpace = "pre-wrap";
-    })
-    .catch(() => {
-      document.getElementById("lyrics").textContent =
-        "No se pudo cargar la letra.";
-    });
-
-  // Descargar letra
-  const downloadBtn = document.getElementById("download-btn");
-  if (downloadBtn) {
-    downloadBtn.href = song.txt;
-    downloadBtn.download = song.title + ".txt";
-  }
-}
-
-// --------------------------------------------------
-// 3️⃣ Detectar en qué página estamos
-// --------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  if (document.getElementById("categories")) {
-    loadIndex();
-  } else if (document.getElementById("lyrics")) {
-    loadSongPage();
-  }
-});
+window.onload = loadSongs;
+window.onload = loadSections;
