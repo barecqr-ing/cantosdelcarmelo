@@ -2,14 +2,10 @@
 // CONFIGURACIÓN DE CANCIONES
 // ================================
 const songs = [
-  { title: "Alabare", lyrics: "lyrics/alabare.txt", audio: "audio/alabare.mp3", sections: ["Entrada"] },
-  { title: "Gloria a Dios", lyrics: "lyrics/gloria.txt", audio: "audio/gloria.mp3", sections: ["Gloria"] },
-  { title: "Aleluya", lyrics: "lyrics/aleluya.txt", audio: "audio/aleluya.mp3", sections: ["Salida"] },
-  { title: "María Reina", lyrics: "lyrics/maria.txt", audio: "audio/maria.mp3", sections: ["Marianas"] },
-  { title: "Santo Espíritu", lyrics: "lyrics/espiritu.txt", audio: "audio/espiritu.mp3", sections: ["Espiritu Santo"] },
-  { title: "Cordero de Dios", lyrics: "lyrics/cordero.txt", audio: "audio/cordero.mp3", sections: ["Cordero", "Comunión"] },
   // Agrega aquí todas las canciones
   { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] }
+  { title: "Aleluya (Anunciamos)", lyrics: "lyrics/aleluya-anunciamos.txt", audio: "audio/aleluya-anunciamos.mp3", sections: ["Aclamación"] }
+  { title: "Aleluya (Brasil)", lyrics: "lyrics/aleluya-brasil.txt", audio: "audio/aleluya-brasil.mp3", sections: ["Aclamación"] }
 ];
 
 // ================================
@@ -132,3 +128,4 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
