@@ -70,6 +70,16 @@ function loadSections() {
     sectionDiv.appendChild(content);
     container.appendChild(sectionDiv);
   });
+  fetch(`lyrics/nombre-de-la-cancion.txt`)
+  .then(r => r.text())
+  .then(text => {
+    document.getElementById("lyrics").textContent = text;
+  })
+  .catch(err => {
+    document.getElementById("lyrics").textContent = "No se pudo cargar la letra.";
+  });
+
 }
 
 window.onload = loadSections;
+
