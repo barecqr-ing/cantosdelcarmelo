@@ -1,85 +1,37 @@
-const songs = [
-  { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] }
-];
+// --- script.js ---
 
-const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espiritu Santo","Otras"];
+// Detecta si estamos en la página de una canción
+if (window.location.pathname.endsWith("song.html")) {
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name"); // ejemplo: abre-tu-jardin
 
-function loadSections() {
-  const container = document.getElementById("sections-container");
+  const titleElement = document.getElementById("song-title");
+  const lyricsElement = document.getElementById("lyrics");
+  const audioElement = document.getElementById("audio-player");
 
-  categories.forEach(category => {
-    const sectionDiv = document.createElement("div");
-    sectionDiv.classList.add("section");
+  if (!name) {
+    titleElement.textContent = "Canción no especificada";
+    lyricsElement.textContent = "";
+  } else {
+    // Muestra el nombre de la canción como título
+    const formattedName = name.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase());
+    titleElement.textContent = formattedName;
 
-    const header = document.createElement("div");
-    header.classList.add("section-header");
-    header.textContent = category;
-
-    const content = document.createElement("div");
-    content.classList.add("section-content");
-
-    const catSongs = songs.filter(s => s.sections.includes(category))
-                          .sort((a,b) => a.title.localeCompare(b.title));
-
-    catSongs.forEach(song => {
-      const songDiv = document.createElement("div");
-      songDiv.classList.add("song-item");
-      songDiv.textContent = song.title;
-
-      const details = document.createElement("div");
-      details.classList.add("song-details");
-      details.style.display = "none";
-      details.innerHTML = `
-        <p>Cargando letra...</p>
-        <p><a href="${song.lyrics}" download>Descargar letra</a></p>
-        <audio controls>
-          <source src="${song.audio}" type="audio/mpeg">
-          Tu navegador no soporta audio.
-        </audio>
-      `;
-
-      // Mostrar detalles y cargar letra al hacer clic
-      songDiv.addEventListener("click", () => {
-        if(details.style.display === "none") {
-          // Leer el archivo .txt
-          fetch(song.lyrics)
-            .then(response => response.text())
-            .then(text => {
-              details.querySelector("p").textContent = text;
-            })
-            .catch(err => {
-              details.querySelector("p").textContent = "No se pudo cargar la letra.";
-              console.error(err);
-            });
-
-          details.style.display = "block";
-        } else {
-          details.style.display = "none";
-        }
+    // Carga la letra desde la carpeta /lyrics
+    fetch(`lyrics/${name}.txt`)
+      .then(response => {
+        if (!response.ok) throw new Error("Archivo no encontrado");
+        return response.text();
+      })
+      .then(text => {
+        lyricsElement.textContent = text; // muestra acentos y ñ
+      })
+      .catch(() => {
+        lyricsElement.textContent = "No se pudo cargar la letra de la canción.";
       });
 
-      content.appendChild(songDiv);
-      content.appendChild(details);
-    });
-
-    header.addEventListener("click", () => {
-      content.style.display = content.style.display === "none" ? "block" : "none";
-    });
-
-    sectionDiv.appendChild(header);
-    sectionDiv.appendChild(content);
-    container.appendChild(sectionDiv);
-  });
-  fetch(`lyrics/nombre-de-la-cancion.txt`)
-  .then(r => r.text())
-  .then(text => {
-    document.getElementById("lyrics").textContent = text;
-  })
-  .catch(err => {
-    document.getElementById("lyrics").textContent = "No se pudo cargar la letra.";
-  });
-
+    // Configura el reproductor de audio
+    audioElement.src = `audio/${name}.mp3`;
+  }
 }
-
-window.onload = loadSections;
 
