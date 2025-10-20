@@ -9,6 +9,7 @@ const songs = [
   { title: "Aleluya (Brasil)", lyrics: "lyrics/aleluya-brasil.txt", audio: "audio/aleluya-brasil.mp3", sections: ["Aclamación"] },
   { title: "Canta Aleluya", lyrics: "lyrics/canta-aleluya.txt", audio: "audio/canta-aleluya.mp3", sections: ["Aclamación"] },
   { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Comunión"] },
+    { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Entrada"] },
   { title: "Camino Firme", lyrics: "lyrics/camino-firme.txt", audio: "audio/camino-firme.mp3", sections: ["Comunión"] },
   { title: "Canta Iglesia", lyrics: "lyrics/canta-iglesia.txt", audio: "audio/canta-iglesia.mp3", sections: ["Comunión"] },
   { title: "Cinco Panes", lyrics: "lyrics/cinco-panes.txt", audio: "audio/cinco-panes.mp3", sections: ["Comunión"] },
@@ -139,6 +140,7 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
