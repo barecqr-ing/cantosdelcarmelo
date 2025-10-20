@@ -1,37 +1,74 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Canción</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Canto</title>
+<style>
+  body { font-family: Arial, sans-serif; margin: 20px; background: #f9f9f9; color: #222; }
+  h1 { text-align: center; color: #900; margin-bottom: 20px; }
+  audio { display: block; margin: 10px auto; }
+  #lyrics {
+    white-space: pre-wrap; /* respeta saltos de línea */
+    line-height: 1.6;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  a { color: #900; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+</style>
 </head>
 <body>
-  <h1 id="song-title"></h1>
-  <p id="lyrics"></p>
-  <audio id="audio" controls></audio>
-  <div id="lyrics">Cargando letra...</div>
 
-  <script>
-    // Obtener el nombre de la canción desde la URL
-    const params = new URLSearchParams(window.location.search);
-    const name = params.get('name'); // ejemplo: abre_tu_jardin
+<h1 id="song-title">Cargando...</h1>
 
-    if(name) {
-      document.getElementById("song-title").textContent = name.replace(/_/g," ");
+<audio id="song-audio" controls>
+  Tu navegador no soporta audio.
+</audio>
 
-      // Cargar letra
-      fetch(`lyrics/${name}.txt`)
-        .then(r => r.text())
-        .then(text => {
-          document.getElementById("lyrics").textContent = text;
-        })
-        .catch(e => document.getElementById("lyrics").textContent = "No se pudo cargar la letra.");
+<p style="text-align:center;">
+  <a id="download-link" href="#">Descargar letra (.txt)</a>
+</p>
 
-      // Cargar audio
-      document.getElementById("audio").src = `audio/${name}.mp3`;
-    } else {
-      document.getElementById("song-title").textContent = "Canción no encontrada";
-    }
-  </script>
+<div id="lyrics">Cargando letra...</div>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const name = params.get("name"); // ejemplo: "abre-tu-jardin"
+
+  if(name) {
+    // Título legible
+    const title = name.replace(/-/g," ").replace(/\b\w/g,c=>c.toUpperCase());
+    document.getElementById("song-title").textContent = title;
+
+    // Audio
+    const audio = document.getElementById("song-audio");
+    audio.src = `audio/${name}.mp3`;
+
+    // Descargar letra
+    const download = document.getElementById("download-link");
+    download.href = `lyrics/${name}.txt`;
+    download.download = title + ".txt";
+
+    // Cargar letra con saltos de línea
+    fetch(`lyrics/${name}.txt`)
+      .then(res => res.text())
+      .then(text => {
+        const lyricsDiv = document.getElementById("lyrics");
+        lyricsDiv.textContent = text; // importante para acentos y ñ
+      })
+      .catch(()=> {
+        document.getElementById("lyrics").textContent = "No se pudo cargar la letra.";
+      });
+
+  } else {
+    document.getElementById("lyrics").textContent = "No se especificó ninguna canción.";
+  }
+</script>
+
 </body>
 </html>
