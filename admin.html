@@ -2,121 +2,58 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Admin - Cantos del Carmelo</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador de Cantos</title>
+  <style>
+    body { font-family: Arial; background:#fafafa; margin:20px; color:#333; }
+    h1 { text-align:center; color:#900; }
+    .container { max-width:600px; margin:0 auto; background:#fff; padding:20px; border-radius:10px; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
+    input[type="file"] { margin:10px 0; }
+    button { background:#900; color:#fff; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; }
+    button:hover { background:#b00; }
+    ul { margin-top:20px; list-style:none; padding:0; }
+    li { padding:5px 0; border-bottom:1px solid #eee; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Admin - Subir Canciones</h1>
-  </header>
+  <h1>Administrador de Cantos</h1>
+  <div class="container">
+    <h3>Subir archivos de texto (.txt) y audio (.mp3)</h3>
+    <input type="file" id="fileInput" multiple accept=".txt,.mp3"><br>
+    <button onclick="saveFiles()">Guardar en catálogo</button>
 
-  <main>
-    <form id="song-form">
-      <label>
-        Título de la canción:
-        <input type="text" id="song-title" required>
-      </label>
-      <br><br>
+    <h3>Archivos guardados:</h3>
+    <ul id="fileList"></ul>
+  </div>
 
-      <label>
-        Letra (.txt):
-        <input type="file" id="song-lyrics" accept=".txt" required>
-      </label>
-      <br><br>
+  <script>
+    const fileInput = document.getElementById('fileInput');
+    const fileList = document.getElementById('fileList');
 
-      <label>
-        Audio (.mp3):
-        <input type="file" id="song-audio" accept="audio/*" required>
-      </label>
-      <br><br>
+    const savedFiles = JSON.parse(localStorage.getItem('songs') || '[]');
+    renderList();
 
-      <label>
-        Categorías (Ctrl/Cmd para seleccionar varias):
-        <select id="song-sections" multiple size="6" required>
-          <option>Entrada</option>
-          <option>Perdón</option>
-          <option>Gloria</option>
-          <option>Salmos</option>
-          <option>Aclamación</option>
-          <option>Ofertorio</option>
-          <option>Santo</option>
-          <option>Cordero</option>
-          <option>Comunión</option>
-          <option>Marianas</option>
-          <option>Espiritu Santo</option>
-          <option>Otras</option>
-        </select>
-      </label>
-      <br><br>
+    function renderList() {
+      fileList.innerHTML = '';
+      savedFiles.forEach(file => {
+        const li = document.createElement('li');
+        li.textContent = file;
+        fileList.appendChild(li);
+      });
+    }
 
-      <button type="submit">Subir Canción</button>
-    </form>
-
-    <p id="status"></p>
-  </main>
-
-  <!-- Firebase SDK -->
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
-    import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-storage.js";
-
-    const firebaseConfig = {
-      apiKey: "TU_API_KEY",
-      authDomain: "cantosdelcarmelo.firebaseapp.com",
-      projectId: "cantosdelcarmelo",
-      storageBucket: "cantosdelcarmelo.appspot.com",
-      messagingSenderId: "XXXXXXXX",
-      appId: "XXXXXXXX"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const db = getFirestore(app);
-    const storage = getStorage(app);
-
-    const form = document.getElementById("song-form");
-    const statusEl = document.getElementById("status");
-
-    form.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      statusEl.textContent = "Subiendo canción...";
-
-      const title = document.getElementById("song-title").value.trim();
-      const lyricsFile = document.getElementById("song-lyrics").files[0];
-      const audioFile = document.getElementById("song-audio").files[0];
-      const sections = Array.from(document.getElementById("song-sections").selectedOptions).map(opt => opt.value);
-
-      if (!title || !lyricsFile || !audioFile || sections.length === 0) {
-        statusEl.textContent = "Por favor completa todos los campos.";
-        return;
-      }
-
-      try {
-        // Subir letra
-        const lyricsRef = ref(storage, `lyrics/${lyricsFile.name}`);
-        await uploadBytes(lyricsRef, lyricsFile);
-        const lyricsUrl = await getDownloadURL(lyricsRef);
-
-        // Subir audio
-        const audioRef = ref(storage, `audio/${audioFile.name}`);
-        await uploadBytes(audioRef, audioFile);
-        const audioUrl = await getDownloadURL(audioRef);
-
-        // Guardar en Firestore
-        await addDoc(collection(db, "songs"), {
-          title,
-          lyricsUrl,
-          audioUrl,
-          sections
-        });
-
-        statusEl.textContent = `Canción "${title}" subida correctamente.`;
-        form.reset();
-      } catch (err) {
-        console.error(err);
-        statusEl.textContent = "Error al subir la canción.";
-      }
-    });
+    function saveFiles() {
+      const files = Array.from(fileInput.files);
+      files.forEach(f => {
+        if (!savedFiles.includes(f.name)) {
+          savedFiles.push(f.name);
+        }
+      });
+      localStorage.setItem('songs', JSON.stringify(savedFiles));
+      renderList();
+      fileInput.value = '';
+      alert('Archivos registrados en el catálogo.');
+    }
   </script>
 </body>
 </html>
