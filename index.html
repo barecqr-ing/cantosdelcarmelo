@@ -83,8 +83,58 @@
 
     window.onload = loadSections;
   </script>
+  
+  <!-- 🔹 Panel oculto de administración -->
+<div id="admin-panel" style="display:none; margin-top:50px;">
+  <h2>Panel de Administración</h2>
+  <p>Sube archivos de texto (.txt) y audio (.mp3)</p>
+  <input type="file" id="fileInput" multiple accept=".txt,.mp3">
+  <button onclick="saveFiles()">Guardar en catálogo</button>
+
+  <h3>Archivos guardados:</h3>
+  <ul id="fileList"></ul>
+</div>
+
+<script>
+  // --- Mostrar panel si se accede con ?admin=true ---
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("admin") === "true") {
+    document.getElementById("admin-panel").style.display = "block";
+  }
+
+  // --- Guardar y mostrar archivos cargados ---
+  const fileInput = document.getElementById('fileInput');
+  const fileList = document.getElementById('fileList');
+  const savedFiles = JSON.parse(localStorage.getItem('songs') || '[]');
+
+  renderList();
+
+  function renderList() {
+    fileList.innerHTML = '';
+    savedFiles.forEach(file => {
+      const li = document.createElement('li');
+      li.textContent = file;
+      fileList.appendChild(li);
+    });
+  }
+
+  function saveFiles() {
+    const files = Array.from(fileInput.files);
+    files.forEach(f => {
+      if (!savedFiles.includes(f.name)) {
+        savedFiles.push(f.name);
+      }
+    });
+    localStorage.setItem('songs', JSON.stringify(savedFiles));
+    renderList();
+    fileInput.value = '';
+    alert('Archivos registrados en el catálogo.');
+  }
+</script>
+
 </body>
 </html>
+
 
 
 
