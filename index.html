@@ -84,56 +84,83 @@
     window.onload = loadSections;
   </script>
   
-  <!-- 🔹 Panel oculto de administración -->
+ <!-- 🔹 Panel de Administración -->
 <div id="admin-panel" style="display:none; margin-top:50px;">
   <h2>Panel de Administración</h2>
-  <p>Sube archivos de texto (.txt) y audio (.mp3)</p>
-  <input type="file" id="fileInput" multiple accept=".txt,.mp3">
-  <button onclick="saveFiles()">Guardar en catálogo</button>
 
-  <h3>Archivos guardados:</h3>
-  <ul id="fileList"></ul>
+  <label for="titleInput"><strong>Título de la canción:</strong></label>
+  <input type="text" id="titleInput" placeholder="Ej: Abre tu jardín" style="width:100%; margin:8px 0; padding:6px;">
+
+  <label><strong>Categorías:</strong></label><br>
+  <div id="categories-container" style="margin-bottom:10px;"></div>
+
+  <p>Sube archivos de texto (.txt) y audio (.mp3):</p>
+  <input type="file" id="fileInput" multiple accept=".txt,.mp3"><br>
+  <button onclick="saveSong()">Guardar canción</button>
+
+  <h3>Canciones guardadas:</h3>
+  <ul id="songList"></ul>
 </div>
 
 <script>
-  // --- Mostrar panel si se accede con ?admin=true ---
   const params = new URLSearchParams(window.location.search);
   if (params.get("admin") === "true") {
     document.getElementById("admin-panel").style.display = "block";
   }
 
-  // --- Guardar y mostrar archivos cargados ---
-  const fileInput = document.getElementById('fileInput');
-  const fileList = document.getElementById('fileList');
-  const savedFiles = JSON.parse(localStorage.getItem('songs') || '[]');
+  // Categorías
+  const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espiritu Santo","Otras"];
+  const container = document.getElementById("categories-container");
+  categories.forEach(cat => {
+    const label = document.createElement("label");
+    label.innerHTML = `<input type="checkbox" value="${cat}"> ${cat}`;
+    label.style.marginRight = "10px";
+    container.appendChild(label);
+  });
+
+  const songList = document.getElementById('songList');
+  const savedSongs = JSON.parse(localStorage.getItem('songsData') || '[]');
 
   renderList();
 
   function renderList() {
-    fileList.innerHTML = '';
-    savedFiles.forEach(file => {
+    songList.innerHTML = '';
+    savedSongs.forEach(song => {
       const li = document.createElement('li');
-      li.textContent = file;
-      fileList.appendChild(li);
+      li.textContent = `${song.title} — (${song.categories.join(', ')})`;
+      songList.appendChild(li);
     });
   }
 
-  function saveFiles() {
-    const files = Array.from(fileInput.files);
-    files.forEach(f => {
-      if (!savedFiles.includes(f.name)) {
-        savedFiles.push(f.name);
-      }
-    });
-    localStorage.setItem('songs', JSON.stringify(savedFiles));
+  function saveSong() {
+    const title = document.getElementById('titleInput').value.trim();
+    if (!title) { alert('Falta el título'); return; }
+
+    const selectedCats = Array.from(document.querySelectorAll('#categories-container input:checked')).map(i => i.value);
+    if (selectedCats.length === 0) { alert('Selecciona al menos una categoría'); return; }
+
+    const files = Array.from(document.getElementById('fileInput').files);
+    if (files.length === 0) { alert('Sube al menos un archivo'); return; }
+
+    const baseName = title.toLowerCase().replace(/\s+/g, '-');
+    const songData = { title, file: baseName, categories: selectedCats };
+
+    savedSongs.push(songData);
+    localStorage.setItem('songsData', JSON.stringify(savedSongs));
+
+    document.getElementById('titleInput').value = '';
+    document.querySelectorAll('#categories-container input').forEach(i => i.checked = false);
+    document.getElementById('fileInput').value = '';
+
     renderList();
-    fileInput.value = '';
-    alert('Archivos registrados en el catálogo.');
+    alert('Canción guardada correctamente');
   }
 </script>
 
+
 </body>
 </html>
+
 
 
 
