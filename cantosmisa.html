@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Misa - Cantos del Carmelo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Cantos de la Misa</h1>
+  <div id="lista-audios"></div>
+
+  <script>
+    fetch('misa-audios.json')
+      .then(response => response.json())
+      .then(audios => {
+        const lista = document.getElementById('lista-audios');
+
+        audios.forEach(audioPath => {
+          const div = document.createElement('div');
+          div.className = 'audio-item';
+
+          const nombreArchivo = audioPath.split('/').pop();
+
+          const titulo = document.createElement('p');
+          titulo.textContent = nombreArchivo;
+          div.appendChild(titulo);
+
+          const audio = document.createElement('audio');
+          audio.controls = true;
+          audio.src = audioPath;
+          div.appendChild(audio);
+
+          lista.appendChild(div);
+        });
+      })
+      .catch(error => {
+        document.getElementById('lista-audios').textContent = 'Error cargando los audios.';
+        console.error(error);
+      });
+  </script>
+</body>
+</html>
