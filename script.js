@@ -2,22 +2,31 @@
 // CONFIGURACIÓN DE CANCIONES
 // ================================
 const songs = [
-  // Agrega aquí todas las canciones
-  { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] },
-  { title: "Aquí estámos Señor", lyrics: "lyrics/aqui-estamos.txt", audio: "audio/aqui-estamos.mp3", sections: ["Entrada"] },
-  { title: "Aleluya (Anunciamos)", lyrics: "lyrics/aleluya-anunciamos.txt", audio: "audio/aleluya-anunciamos.mp3", sections: ["Aclamación"] },
-  { title: "Aleluya (Brasil)", lyrics: "lyrics/aleluya-brasil.txt", audio: "audio/aleluya-brasil.mp3", sections: ["Aclamación"] },
-  { title: "Canta Aleluya", lyrics: "lyrics/canta-aleluya.txt", audio: "audio/canta-aleluya.mp3", sections: ["Aclamación"] },
-  { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Comunión"] },
+    // Agrega aquí todas las canciones
+    { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] },
+    { title: "Aquí estámos Señor", lyrics: "lyrics/aqui-estamos.txt", audio: "audio/aqui-estamos.mp3", sections: ["Entrada"] },
+    { title: "Aleluya (Anunciamos)", lyrics: "lyrics/aleluya-anunciamos.txt", audio: "audio/aleluya-anunciamos.mp3", sections: ["Aclamación"] },
+    { title: "Aleluya (Brasil)", lyrics: "lyrics/aleluya-brasil.txt", audio: "audio/aleluya-brasil.mp3", sections: ["Aclamación"] },
+    { title: "Canta Aleluya", lyrics: "lyrics/canta-aleluya.txt", audio: "audio/canta-aleluya.mp3", sections: ["Aclamación"] },
+    { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Comunión"] },
     { title: "Alma-Misionera", lyrics: "lyrics/alma-misionera.txt", audio: "audio/alma-misionera.mp3", sections: ["Entrada"] },
-  { title: "Camino Firme", lyrics: "lyrics/camino-firme.txt", audio: "audio/camino-firme.mp3", sections: ["Comunión"] },
-  { title: "Canta Iglesia", lyrics: "lyrics/canta-iglesia.txt", audio: "audio/canta-iglesia.mp3", sections: ["Comunión"] },
-  { title: "Cinco Panes", lyrics: "lyrics/cinco-panes.txt", audio: "audio/cinco-panes.mp3", sections: ["Comunión"] },
-  { title: "Cordero Aravena", lyrics: "lyrics/cordero-aravena.txt", audio: "audio/cordero-aravena.mp3", sections: ["Comunión"] },
-  { title: "Cordero Bianchi", lyrics: "lyrics/cordero-bianchi.txt", audio: "audio/cordero-bianchi.mp3", sections: ["Comunión"] },
-  { title: "Cordero de Dios Cordero", lyrics: "lyrics/cordero-dios.txt", audio: "audio/cordero-dios.mp3", sections: ["Comunión"] },
-  { title: "Cordero Tonada", lyrics: "lyrics/cordero-tonada.txt", audio: "audio/cordero-tonada.mp3", sections: ["Comunión"] },
-  { title: "Cordero Mamut", lyrics: "lyrics/cordero-mamut.txt", audio: "audio/cordero-mamut.mp3", sections: ["Comunión"] }  
+    { title: "Camino Firme", lyrics: "lyrics/camino-firme.txt", audio: "audio/camino-firme.mp3", sections: ["Comunión"] },
+    { title: "Canta Iglesia", lyrics: "lyrics/canta-iglesia.txt", audio: "audio/canta-iglesia.mp3", sections: ["Comunión"] },
+    { title: "Cinco Panes", lyrics: "lyrics/cinco-panes.txt", audio: "audio/cinco-panes.mp3", sections: ["Comunión"] },
+    { title: "Cordero Aravena", lyrics: "lyrics/cordero-aravena.txt", audio: "audio/cordero-aravena.mp3", sections: ["Comunión"] },
+    { title: "Cordero Bianchi", lyrics: "lyrics/cordero-bianchi.txt", audio: "audio/cordero-bianchi.mp3", sections: ["Comunión"] },
+    { title: "Cordero de Dios Cordero", lyrics: "lyrics/cordero-dios.txt", audio: "audio/cordero-dios.mp3", sections: ["Comunión"] },
+    { title: "Cordero Tonada", lyrics: "lyrics/cordero-tonada.txt", audio: "audio/cordero-tonada.mp3", sections: ["Comunión"] },
+    { title: "Cordero Mamut", lyrics: "lyrics/cordero-mamut.txt", audio: "audio/cordero-mamut.mp3", sections: ["Comunión"] } ,
+    { title: "Cordero de Dios que quitas", lyrics: "cordero-de-Dios-que-quitas.txt", audio: "cordero-de-Dios-que-quitas.mp3",sections: ["Cordero"] },
+    { title: "Dios Trino", lyrics: "dios-trino.txt", audio: "dios-trino.mp3",sections: ["Entrada"] },
+    { title: "Flor del Carmelo", lyrics: "flor-del-carmelo.txt", audio: "flor-del-carmelo.mp3",sections: ["Marianas"] },
+    { title: "Gloria folclórico", lyrics: "gloria-folclorico.txt", audio: "gloria-folclorico.mp3",sections: ["Gloria"] },
+    { title: "Jesús estoy aquí", lyrics: "jesus-estoy-aqui.txt", audio: "jesus-estoy-aqui.mp3",sections: ["Comunión"] },
+    { title: "Juntos nos acercamos", lyrics: "juntos-nos-acercamos.txt",  audio: "juntos-nos-acercamos.mp3",sections: ["Ofertorio"] },
+    { title: "oh-Señor-ten-piedad", lyrics: "oh-Señor-ten-piedad.txt", audio: "oh-Señor-ten-piedad.mp3",  sections: ["Perdón"] },
+    { title: "Santo Bianchi", lyrics: "santo-Bianchi-.txt", audio: "santo-Bianchi-.mp3", sections: ["Santo"] },
+    { title: "Virgen peregrina", lyrics: "virgen-peregrina.txt", audio: "virgen-peregrina.mp3",sections: ["Santo"] }
 ];
 
 // ================================
@@ -142,6 +151,7 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
