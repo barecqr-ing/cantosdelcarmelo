@@ -31,7 +31,8 @@ const songs = [
     { title: "Aleluya folclorico", lyrics: "aleluya-folclorico.txt", audio: "aleluya-folclorico.mp3",sections: ["Aclamación"] },
     { title: "Hermosa es tu palabra", lyrics: "hermosa-es-tu-palabra.txt", audio: "hermosa-es-tu-palabra.mp3",sections: ["Post Aclamación"] },
     { title: "Bendecid a Dios", lyrics: "bendecid-a-dios.txt",audio: "bendecid-a-dios.mp3", sections: ["Post Aclamación"] },
-    { title: "Salmo 33", lyrics: "salmo33.txt", audio: "salmo33.mp3", sections: ["Salmos"] }
+    { title: "Salmo 33", lyrics: "salmo33.txt", audio: "salmo33.mp3", sections: ["Salmos"] },
+    { title: "Contigo Virgen del Carmen", lyrics: "contigo-virgen-del-carmen.txt", audio: "contigo-virgen-del-carmen.mp3",sections: ["Marianas"] }
 ];
 
 // ================================
@@ -171,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
