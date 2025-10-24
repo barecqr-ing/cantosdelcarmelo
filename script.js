@@ -26,7 +26,11 @@ const songs = [
     { title: "Juntos nos acercamos", lyrics: "juntos-nos-acercamos.txt",  audio: "juntos-nos-acercamos.mp3",sections: ["Ofertorio"] },
     { title: "Oh Señor ten piedad", lyrics: "oh-Señor-ten-piedad.txt", audio: "oh-Señor-ten-piedad.mp3",  sections: ["Perdón"] },
     { title: "Santo Bianchi", lyrics: "santo-Bianchi-.txt", audio: "santo-Bianchi-.mp3", sections: ["Santo"] },
-    { title: "Virgen peregrina", lyrics: "virgen-peregrina.txt", audio: "virgen-peregrina.mp3",sections: ["Santo"] }
+    { title: "Virgen peregrina", lyrics: "virgen-peregrina.txt", audio: "virgen-peregrina.mp3",sections: ["Santo"] },
+    { title: "Aleluya", lyrics: "aleluya.txt",  audio: "aleluya.mp3",sections: ["Aclamación"] },
+    { title: "Aleluya folclorico", lyrics: "aleluya-folclorico.txt", audio: "aleluya-folclorico.mp3",sections: ["Aclamación"] },
+    { title: "Hermosa es tu palabra", lyrics: "hermosa-es-tu-palabra.txt", audio: "hermosa-es-tu-palabra.mp3",sections: ["Post Aclamación"] },
+    { title: "Bendecid a Dios", lyrics: "bendecid-a-dios.txt",audio: "bendecid-a-dios.mp3", sections: ["Post Aclamación"] }
 ];
 
 // ================================
@@ -151,6 +155,7 @@ function loadSongs() {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
