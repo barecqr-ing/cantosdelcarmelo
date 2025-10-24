@@ -153,8 +153,24 @@ function loadSongs() {
   });
 }
 
+    // Reproducción automática de audios en páginas que los tengan
+document.addEventListener('DOMContentLoaded', () => {
+  const audioElements = document.querySelectorAll('audio');
+  if (audioElements.length > 0) {
+    audioElements.forEach((audio, index) => {
+      audio.addEventListener('ended', () => {
+        if (index < audioElements.length - 1) {
+          audioElements[index + 1].play();
+        }
+      });
+    });
+  }
+});
+
+
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
