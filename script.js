@@ -67,10 +67,9 @@ const categories = [
   "Comunión",
   "Marianas",
   "Espíritu Santo",
-  "Folclore",
   "Otras"
 ];
-const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Post Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espíritu Santo","Folclore","Otras"];
+const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Post Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espíritu Santo","Otras"];
 
 function loadSections() {
   const container = document.getElementById("sections-container");
@@ -188,6 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
