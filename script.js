@@ -34,7 +34,20 @@ const songs = [
     { title: "Salmo 33", lyrics: "salmo33.txt", audio: "salmo33.mp3", sections: ["Salmos"] },
     { title: "Contigo Virgen del Carmen", lyrics: "contigo-virgen-del-carmen.txt", audio: "contigo-virgen-del-carmen.mp3",sections: ["Marianas"] },
     { title: "Aleluya (Gregoriano)", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] },
-    { title: "Aleluya para alabar al Señor", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] }
+    { title: "Aleluya para alabar al Señor", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] },
+    { title: "Chile, una mesa para todos", lyrics: "lyrics/chile-mesa-para-todos.txt", audio: "audio/chile-mesa-para-todos.mp3", sections: ["Comunión"] },
+    { title: "No podemos caminar", lyrics: "lyrics/no-podemos-caminar.txt", audio: "audio/no-podemos-caminar.mp3", sections: ["Comunión"] },
+    { title: "Aleluya para alabar al Señor", lyrics: "lyrics/aleluya-para-alabar.txt", audio: "audio/aleluya-para-alabar.mp3", sections: ["Aclamación"] },
+    { title: "El Señor hoy nos reúne", lyrics: "lyrics/el-señor-hoy-nos-reune.txt", audio: "audio/el-señor-hoy-nos-reune.mp3", sections: ["Comunión"] },
+    { title: "El Señor nos da su amor", lyrics: "lyrics/el-señor-nos-da-su-amor.txt", audio: "audio/el-señor-nos-da-su-amor.mp3", sections: ["Comunión"] },
+    { title: "Ven a iluminar", lyrics: "lyrics/ven-a-iluminar.txt", audio: "audio/ven-a-iluminar.mp3", sections: ["Espíritu Santo"] },
+    { title: "Esquinazo de Aleluya", lyrics: "lyrics/esquinazo-aleluya.txt", audio: "audio/esquinazo-aleluya.mp3", sections: ["Entrada"] },
+    { title: "Esta es la luz de Cristo ", lyrics: "lyrics/luz-de-cristo.txt", audio: "audio/luz-de-cristo.mp3", sections: ["Otros"] },
+    { title: "Gloria a Dios allá en el Cielo", lyrics: "lyrics/gloria-alla-en-el-cielo.txt", audio: "audio/gloria-alla-en-el-cielo.mp3", sections: ["Gloria"] },
+    { title: "Gloria a Dios en el Cielo", lyrics: "lyrics/gloria-en-el-cielo.txt", audio: "audio/gloria-en-el-cielo.mp3", sections: ["Gloria"] },
+    { title: "Gloria Grande", lyrics: "lyrics/gloria-grande.txt", audio: "audio/gloria-grande.mp3", sections: ["Gloria"] },
+    { title: "Gloria Juvenil", lyrics: "lyrics/gloria-juvenil.txt", audio: "audio/gloria-juvenil.mp3", sections: ["Gloria"] },
+    { title: "Gloria pal'monte", lyrics: "lyrics/gloria-pal-monte.txt", audio: "audio/gloria-pal-monte.mp3", sections: ["Gloria"] }
     
 ];
 
@@ -175,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
