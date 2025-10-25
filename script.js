@@ -42,7 +42,7 @@ const songs = [
     { title: "El Señor nos da su amor", lyrics: "lyrics/el-señor-nos-da-su-amor.txt", audio: "audio/el-señor-nos-da-su-amor.mp3", sections: ["Comunión"] },
     { title: "Ven a iluminar", lyrics: "lyrics/ven-a-iluminar.txt", audio: "audio/ven-a-iluminar.mp3", sections: ["Espíritu Santo"] },
     { title: "Esquinazo de Aleluya", lyrics: "lyrics/esquinazo-aleluya.txt", audio: "audio/esquinazo-aleluya.mp3", sections: ["Entrada"] },
-    { title: "Esta es la luz de Cristo ", lyrics: "lyrics/luz-de-cristo.txt", audio: "audio/luz-de-cristo.mp3", sections: ["Otros"] },
+    { title: "Esta es la luz de Cristo ", lyrics: "lyrics/luz-de-cristo.txt", audio: "audio/luz-de-cristo.mp3", sections: ["Otras"] },
     { title: "Gloria a Dios allá en el Cielo", lyrics: "lyrics/gloria-alla-en-el-cielo.txt", audio: "audio/gloria-alla-en-el-cielo.mp3", sections: ["Gloria"] },
     { title: "Gloria a Dios en el Cielo", lyrics: "lyrics/gloria-en-el-cielo.txt", audio: "audio/gloria-en-el-cielo.mp3", sections: ["Gloria"] },
     { title: "Gloria Grande", lyrics: "lyrics/gloria-grande.txt", audio: "audio/gloria-grande.mp3", sections: ["Gloria"] },
@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
