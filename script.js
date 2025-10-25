@@ -33,7 +33,8 @@ const songs = [
     { title: "Bendecid a Dios", lyrics: "bendecid-a-dios.txt",audio: "bendecid-a-dios.mp3", sections: ["Post Aclamación"] },
     { title: "Salmo 33", lyrics: "salmo33.txt", audio: "salmo33.mp3", sections: ["Salmos"] },
     { title: "Contigo Virgen del Carmen", lyrics: "contigo-virgen-del-carmen.txt", audio: "contigo-virgen-del-carmen.mp3",sections: ["Marianas"] },
-    { title: "Aleluya (Gregoriano)", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] }
+    { title: "Aleluya (Gregoriano)", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] },
+    { title: "Aleluya para alabar al Señor", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] }
     
 ];
 
@@ -174,6 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
