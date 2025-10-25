@@ -36,7 +36,7 @@ const songs = [
     { title: "Aleluya (Gregoriano)", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] },
     { title: "Aleluya para alabar al Señor", lyrics: "aleluya-gregoriano.txt", audio: "aleluya-gregoriano.mp3",sections: ["Aclamación"] },
     { title: "Chile, una mesa para todos", lyrics: "lyrics/chile-mesa-para-todos.txt", audio: "audio/chile-mesa-para-todos.mp3", sections: ["Comunión"] },
-    { title: "No podemos caminar", lyrics: "lyrics/no-podemos-caminar.txt", audio: "audio/no-podemos-caminar.mp3", sections: ["Comunión"] },
+    { title: "No podemos caminar", lyrics: "lyrics/no-podemos-caminar.txt", audio: "audio/no-podemos-caminar.mp3", sections: ["Post Aclamación"] },
     { title: "Aleluya para alabar al Señor", lyrics: "lyrics/aleluya-para-alabar.txt", audio: "audio/aleluya-para-alabar.mp3", sections: ["Aclamación"] },
     { title: "El Señor hoy nos reúne", lyrics: "lyrics/el-señor-hoy-nos-reune.txt", audio: "audio/el-señor-hoy-nos-reune.mp3", sections: ["Comunión"] },
     { title: "El Señor nos da su amor", lyrics: "lyrics/el-señor-nos-da-su-amor.txt", audio: "audio/el-señor-nos-da-su-amor.mp3", sections: ["Comunión"] },
@@ -188,6 +188,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 window.onload = loadSongs;
 window.onload = loadSections;
+
 
 
 
