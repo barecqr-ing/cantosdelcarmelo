@@ -1,6 +1,20 @@
 / ================================
 // CONFIGURACIÓN DE CANCIONES
 // ================================
+
+let songs = [];
+
+fetch('songs.json')
+  .then(response => response.json())
+  .then(data => {
+    songs = data;
+    loadSongs();
+    loadSections();
+  })
+  .catch(error => {
+    console.error('Error al cargar songs.json:', error);
+  });
+/*
 const songs = [
     // Agrega aquí todas las canciones
     { title: "Abre tu Jardín", lyrics: "lyrics/abre-tu-jardin.txt", audio: "audio/abre-tu-jardin.mp3", sections: ["Entrada"] },
@@ -50,7 +64,7 @@ const songs = [
     { title: "Gloria pal'monte", lyrics: "lyrics/gloria-pal-monte.txt", audio: "audio/gloria-pal-monte.mp3", sections: ["Gloria"] }
     
 ];
-
+*/
 // ================================
 // CONFIGURACIÓN DE CATEGORÍAS
 // ================================
@@ -185,8 +199,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-window.onload = loadSongs;
-window.onload = loadSections;
+//window.onload = loadSongs;
+//window.onload = loadSections;
+
 
 
 
