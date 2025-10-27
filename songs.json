@@ -386,5 +386,7 @@
     "sections": [
       "Gloria"
     ]
-  }
+  },
+   { "title": "Cordero (nuevo)", file": "cordero-nuevo.txt,lyrics": "lyrics/cordero-nuevo.txt.txt",    "audio": "audio/cordero-nuevo.txt.mp3",    "sections": ["Cordero"] }
+
 ]
