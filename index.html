@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=evice-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cantos del Carmelo</title>
 
   <style>
@@ -11,23 +11,31 @@
     .section { margin-bottom:10px; border-radius:8px; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); }
     .section-header { padding:15px; cursor:pointer; font-weight:bold; background:#f1f1f1; color:#900; border-radius:8px; }
     .section-content { display:none; padding:10px 15px; }
-    .section-content.show {display: block; }
+    .section-content.show { display: block; }
     .song-item { margin:5px 0; padding:5px; border-bottom:1px solid #eee; }
     .song-item a { color:#900; text-decoration:none; }
     .song-item a:hover { text-decoration:underline; }
-
   </style>
-
 </head>
 <body>
- 
+
   <h1>Cantos del Carmelo</h1>
   <div id="sections-container"></div>
-  <div id="songs-container"></div>
-  <script src="script.js">
 
-    // Lista de canciones
+  <script>
     const categories = ["Entrada","Perdón","Gloria","Salmos","Aclamación","Post Aclamación","Ofertorio","Santo","Cordero","Comunión","Marianas","Espíritu Santo","Otras"];
+
+    let songs = [];
+
+    fetch('songs.json')
+      .then(response => response.json())
+      .then(data => {
+        songs = data;
+        loadSections();
+      })
+      .catch(error => {
+        console.error('Error al cargar songs.json:', error);
+      });
 
     function loadSections() {
       const container = document.getElementById("sections-container");
@@ -62,9 +70,10 @@
         container.appendChild(sectionDiv);
       });
     }
-
-    window.onload = loadSections;
   </script>
-<!--  <p><a href="cantosmisa.html">Ver cantos de la Misa</a></p> -->
+
+  <!-- <p><a href="cantosmisa.html">Ver cantos de la Misa</a></p> -->
 </body>
 </html>
+
+
