@@ -393,7 +393,13 @@
      "audio": "audio/cordero-nuevo.txt.mp3",    
      "sections": ["Cordero"] 
    },
-    { "title": "El testigo (estribillo)"," file": "el-testigo-estribillo","lyrics": "lyrics/el-testigo-estribillo.txt",    "audio": "audio/el-testigo-estribillo.mp3",    "sections": ["Post Aclamación"] },
+    { "title": "El testigo (estribillo)",
+      "file": "el-testigo-estribillo",
+      "lyrics": "lyrics/el-testigo-estribillo.txt",   
+      "audio": "audio/el-testigo-estribillo.mp3",    
+      "sections": ["Post Aclamación"] 
+      
+    },
  { "title": "Hoy llegamos a casa Señor"," file": "hoy-llegamos","lyrics": "lyrics/hoy-llegamos.txt",    "audio": "audio/hoy-llegamos.mp3",    "sections": ["Entrada"] },
  { "title": "Madre del redentor"," file": "madre-del-redentor","lyrics": "lyrics/madre-del-redentor.txt",    "audio": "audio/madre-del-redentor.mp3",    "sections": ["Marianas"] },
  { "title": "Mensajero de la paz"," file": "mensajero-de-la-paz","lyrics": "lyrics/mensajero-de-la-paz.txt",    "audio": "audio/mensajero-de-la-paz.mp3",    "sections": ["Comunión"] },
