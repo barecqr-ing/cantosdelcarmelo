@@ -388,7 +388,7 @@
     ]
   },
    { "title": "Cordero (nuevo)", 
-     "file": "cordero-nuevo" , 
+     "file": "cordero-nuevo", 
      "lyrics": "lyrics/cordero-nuevo.txt",    
      "audio": "audio/cordero-nuevo.txt.mp3",    
      "sections": ["Cordero"] 
