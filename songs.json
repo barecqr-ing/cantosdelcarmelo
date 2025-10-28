@@ -410,7 +410,18 @@
  { "title": "Yo le resusitare","file": "yo-le-resusitare","lyrics": "lyrics/yo-le-resusitare.txt",    "audio": "audio/yo-le-resusitare.mp3",    "sections": ["Comunión"] },
  { "title": "Y seré pan y seré vino","file": "sere-pan","lyrics": "lyrics/sere-pan.txt",    "audio": "audio/sere-pan.mp3",    "sections": ["Ofertorio"] },
  { "title": "Te presemtamos la vida, Señor","file": "te-presemtamos-la-vida","lyrics": "lyrics/te-presemtamos-la-vida.txt",    "audio": "audio/te-presemtamos-la-vida.mp3",    "sections": ["Ofertorio"] },
- { "title": "Te ofrecemos Padre Nuestro","file": "tr-ofrecemos-padre-nuestro","lyrics": "lyrics/tr-ofrecemos-padre-nuestro.txt",    "audio": "audio/tr-ofrecemos-padre-nuestro.mp3",    "sections": ["Ofertorio"] }
+ { "title": "Te ofrecemos Padre Nuestro","file": "tr-ofrecemos-padre-nuestro","lyrics": "lyrics/tr-ofrecemos-padre-nuestro.txt",    "audio": "audio/tr-ofrecemos-padre-nuestro.mp3",    "sections": ["Ofertorio"] },
+   { "title": "Hombres Nuevos","file": "hombres-nuevos","lyrics": "lyrics/hombres-nuevos.txt",    "audio": "audio/hombres-nuevos.mp3",    "sections": ["Comunión"] },
+ { "title": "Id Amigos","file": "id-amigos","lyrics": "lyrics/id-amigos.txt",    "audio": "audio/id-amigos.mp3",    "sections": ["Comunión"] },
+ { "title": "Jesus El Buen Pastor","file": "jesus-el-buen-pastor","lyrics": "lyrics/jesus-el-buen-pastor.txt",    "audio": "audio/jesus-el-buen-pastor.mp3",    "sections": ["Comunión"] },
+ { "title": "Haz Cantar Tu Vida","file": "haz-cantar-tu-vida","lyrics": "lyrics/haz-cantar-tu-vida.txt",    "audio": "audio/haz-cantar-tu-vida.mp3",    "sections": ["Comunión"] },
+ { "title": "Elegida","file": "elegida","lyrics": "lyrics/elegida.txt",    "audio": "audio/elegida.mp3",    "sections": ["Marianas"] },
+ { "title": "Los Frutos Mi Tierra","file": "los-frutos-mi-tierra","lyrics": "lyrics/los-frutos-mi-tierra.txt",    "audio": "audio/los-frutos-mi-tierra.mp3",    "sections": ["Ofertorio"] },
+ { "title": "Maravilloso Es El Gozo","file": "maravilloso-es-el-gozo","lyrics": "lyrics/maravilloso-es-el-gozo.txt",    "audio": "audio/maravilloso-es-el-gozo.mp3",    "sections": ["Comunión"] },
+ { "title": "Negra es la uva","file": "negra-es-la-uva","lyrics": "lyrics/negra-es-la-uva.txt",    "audio": "audio/negra-es-la-uva.mp3",    "sections": ["Ofertorio"] },
+ { "title": "Obrero de Dios","file": "obrero-de-dios","lyrics": "lyrics/obrero-de-dios.txt",    "audio": "audio/obrero-de-dios.mp3",    "sections": ["Comunión"] },
+ { "title": "Que bueno es el pan que tu nos das","file": "que-bueno-es-el-pan","lyrics": "lyrics/que-bueno-es-el-pan.txt",    "audio": "audio/que-bueno-es-el-pan.mp3",    "sections": ["Post Aclamación"] },
+
 
 
 ]
