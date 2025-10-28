@@ -400,17 +400,17 @@
       "sections": ["Post Aclamación"] 
       
     },
- { "title": "Hoy llegamos a casa Señor"," file": "hoy-llegamos","lyrics": "lyrics/hoy-llegamos.txt",    "audio": "audio/hoy-llegamos.mp3",    "sections": ["Entrada"] },
- { "title": "Madre del redentor"," file": "madre-del-redentor","lyrics": "lyrics/madre-del-redentor.txt",    "audio": "audio/madre-del-redentor.mp3",    "sections": ["Marianas"] },
- { "title": "Mensajero de la paz"," file": "mensajero-de-la-paz","lyrics": "lyrics/mensajero-de-la-paz.txt",    "audio": "audio/mensajero-de-la-paz.mp3",    "sections": ["Comunión"] },
- { "title": "Ofrenda de amor"," file": "ofrenda-de-amor","lyrics": "lyrics/ofrenda-de-amor.txt",    "audio": "audio/ofrenda-de-amor.mp3",    "sections": ["Ofertorio"] },
- { "title": "Salmo 18"," file": "salmo18","lyrics": "lyrics/salmo18.txt",    "audio": "audio/salmo18.mp3",    "sections": ["Salmos"] },
- { "title": "Santo Hamame"," file": "santo-hamame","lyrics": "lyrics/santo-hamame.txt",    "audio": "audio/santo-hamame.mp3",    "sections": ["Santo"] },
- { "title": "Ten piedad (polka)"," file": "ten-piedad-polka","lyrics": "lyrics/ten-piedad-polka.txt",    "audio": "audio/ten-piedad-polka.mp3",    "sections": ["Perdón"] },
- { "title": "Yo le resusitare"," file": "yo-le-resusitare","lyrics": "lyrics/yo-le-resusitare.txt",    "audio": "audio/yo-le-resusitare.mp3",    "sections": ["Comunión"] },
- { "title": "Y seré pan y seré vino"," file": "sere-pan","lyrics": "lyrics/sere-pan.txt",    "audio": "audio/sere-pan.mp3",    "sections": ["Ofertorio"] },
- { "title": "Te presemtamos la vida, Señor"," file": "te-presemtamos-la-vida","lyrics": "lyrics/te-presemtamos-la-vida.txt",    "audio": "audio/te-presemtamos-la-vida.mp3",    "sections": ["Ofertorio"] },
- { "title": "Te ofrecemos Padre Nuestro"," file": "tr-ofrecemos-padre-nuestro","lyrics": "lyrics/tr-ofrecemos-padre-nuestro.txt",    "audio": "audio/tr-ofrecemos-padre-nuestro.mp3",    "sections": ["Ofertorio"] }
+ { "title": "Hoy llegamos a casa Señor","file": "hoy-llegamos","lyrics": "lyrics/hoy-llegamos.txt",    "audio": "audio/hoy-llegamos.mp3",    "sections": ["Entrada"] },
+ { "title": "Madre del redentor","file": "madre-del-redentor","lyrics": "lyrics/madre-del-redentor.txt",    "audio": "audio/madre-del-redentor.mp3",    "sections": ["Marianas"] },
+ { "title": "Mensajero de la paz","file": "mensajero-de-la-paz","lyrics": "lyrics/mensajero-de-la-paz.txt",    "audio": "audio/mensajero-de-la-paz.mp3",    "sections": ["Comunión"] },
+ { "title": "Ofrenda de amor","file": "ofrenda-de-amor","lyrics": "lyrics/ofrenda-de-amor.txt",    "audio": "audio/ofrenda-de-amor.mp3",    "sections": ["Ofertorio"] },
+ { "title": "Salmo 18","file": "salmo18","lyrics": "lyrics/salmo18.txt",    "audio": "audio/salmo18.mp3",    "sections": ["Salmos"] },
+ { "title": "Santo Hamame","file": "santo-hamame","lyrics": "lyrics/santo-hamame.txt",    "audio": "audio/santo-hamame.mp3",    "sections": ["Santo"] },
+ { "title": "Ten piedad (polka)","file": "ten-piedad-polka","lyrics": "lyrics/ten-piedad-polka.txt",    "audio": "audio/ten-piedad-polka.mp3",    "sections": ["Perdón"] },
+ { "title": "Yo le resusitare","file": "yo-le-resusitare","lyrics": "lyrics/yo-le-resusitare.txt",    "audio": "audio/yo-le-resusitare.mp3",    "sections": ["Comunión"] },
+ { "title": "Y seré pan y seré vino","file": "sere-pan","lyrics": "lyrics/sere-pan.txt",    "audio": "audio/sere-pan.mp3",    "sections": ["Ofertorio"] },
+ { "title": "Te presemtamos la vida, Señor","file": "te-presemtamos-la-vida","lyrics": "lyrics/te-presemtamos-la-vida.txt",    "audio": "audio/te-presemtamos-la-vida.mp3",    "sections": ["Ofertorio"] },
+ { "title": "Te ofrecemos Padre Nuestro","file": "tr-ofrecemos-padre-nuestro","lyrics": "lyrics/tr-ofrecemos-padre-nuestro.txt",    "audio": "audio/tr-ofrecemos-padre-nuestro.mp3",    "sections": ["Ofertorio"] }
 
 
 ]
