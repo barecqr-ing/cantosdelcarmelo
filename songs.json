@@ -420,7 +420,7 @@
  { "title": "Maravilloso Es El Gozo","file": "maravilloso-es-el-gozo","lyrics": "lyrics/maravilloso-es-el-gozo.txt",    "audio": "audio/maravilloso-es-el-gozo.mp3",    "sections": ["Comunión"] },
  { "title": "Negra es la uva","file": "negra-es-la-uva","lyrics": "lyrics/negra-es-la-uva.txt",    "audio": "audio/negra-es-la-uva.mp3",    "sections": ["Ofertorio"] },
  { "title": "Obrero de Dios","file": "obrero-de-dios","lyrics": "lyrics/obrero-de-dios.txt",    "audio": "audio/obrero-de-dios.mp3",    "sections": ["Comunión"] },
- { "title": "Que bueno es el pan que tu nos das","file": "que-bueno-es-el-pan","lyrics": "lyrics/que-bueno-es-el-pan.txt",    "audio": "audio/que-bueno-es-el-pan.mp3",    "sections": ["Post Aclamación"] },
+ { "title": "Que bueno es el pan que tu nos das","file": "que-bueno-es-el-pan","lyrics": "lyrics/que-bueno-es-el-pan.txt",    "audio": "audio/que-bueno-es-el-pan.mp3",    "sections": ["Post Aclamación"] }
 
 
 
