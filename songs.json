@@ -420,7 +420,14 @@
  { "title": "Maravilloso Es El Gozo","file": "maravilloso-es-el-gozo","lyrics": "lyrics/maravilloso-es-el-gozo.txt",    "audio": "audio/maravilloso-es-el-gozo.mp3",    "sections": ["Comunión"] },
  { "title": "Negra es la uva","file": "negra-es-la-uva","lyrics": "lyrics/negra-es-la-uva.txt",    "audio": "audio/negra-es-la-uva.mp3",    "sections": ["Ofertorio"] },
  { "title": "Obrero de Dios","file": "obrero-de-dios","lyrics": "lyrics/obrero-de-dios.txt",    "audio": "audio/obrero-de-dios.mp3",    "sections": ["Comunión"] },
- { "title": "Que bueno es el pan que tu nos das","file": "que-bueno-es-el-pan","lyrics": "lyrics/que-bueno-es-el-pan.txt",    "audio": "audio/que-bueno-es-el-pan.mp3",    "sections": ["Post Aclamación"] }
+ { "title": "Que bueno es el pan que tu nos das","file": "que-bueno-es-el-pan","lyrics": "lyrics/que-bueno-es-el-pan.txt",    "audio": "audio/que-bueno-es-el-pan.mp3",    "sections": ["Post Aclamación"] },
+   { "title": "Perdon, Señor piedad de mi","file": "perdon-piedad-de-mi","lyrics": "lyrics/perdon-piedad-de-mi.txt",    "audio": "audio/perdon-piedad-de-mi.mp3",    "sections": ["Perdón"] },
+ { "title": "Te presentamos el vino y el pan","file": "te-presentamos","lyrics": "lyrics/te-presentamos.txt",    "audio": "audio/te-presentamos.mp3",    "sections": ["Ofertorio"] },
+ { "title": "Haz Cantar Tu Vida","file": "haz-cantar-tu-vida","lyrics": "lyrics/haz-cantar-tu-vida.txt",    "audio": "audio/haz-cantar-tu-vida.mp3",    "sections": ["Entrada"] },
+ { "title": "Santo Continental","file": "santo-continental","lyrics": "lyrics/santo-continental.txt",    "audio": "audio/santo-continental.mp3",    "sections": ["Santo"] },
+ { "title": "Cristo está conmigo","file": "cristo-esta-conmigo","lyrics": "lyrics/cristo-esta-conmigo.txt",    "audio": "audio/cristo-esta-conmigo.mp3",    "sections": ["Comunión"] },
+ { "title": "Madre de Miserecordia","file": "madre-misaricordia","lyrics": "lyrics/madre-misaricordia.txt",    "audio": "audio/madre-misaricordia.mp3",    "sections": ["Marianas"] }
+
 
 
 
