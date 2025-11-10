@@ -1,10 +1,12 @@
 [
-"audio/cordero-de-Dios-que-quitas.mp3",
-"audio/dios-trino.mp3",
-"audio/flor-del-carmelo.mp3",
-"audio/gloria-folclorico.mp3",
-"audio/juntos-nos-acercamos.mp3",
-"audio/oh-Señor-ten-piedad.mp3",
-"audio/salmo33.mp3",
-"audio/santo-Bianchi-.mp3"
+"lyrics/aleluya-brasil.txt",	"audio/aleluya-brasil.mp3",
+"lyrics/gloria-pal-monte.txt",	"audio/gloria-pal-monte.mp3",
+"lyrics/cordero-nuevo.txt",	"audio/cordero-nuevo.mp3",
+"lyrics/sere-pan.txt",	"audio/sere-pan.mp3",
+"lyrics/perdon-piedad-de-mi.txt",	"audio/perdon-piedad-de-mi.mp3",
+"lyrics/el-señor-es-mi-fortaleza.txt",	"audio/el-señor-es-mi-fortaleza.mp3",
+"lyrics/santo-nuevo.txt",	"audio/santo-nuevo.mp3",
+"lyrics/dia-noche.txt",	"audio/dia-noche.mp3",
+"lyrics/vuelvan-los-ojos.txt",	"audio/vuelvan-los-ojos.mp3",
+"lyrics/pueblo-que-camina.txt",	"audio/pueblo-que-camina.mp3"
 ]
