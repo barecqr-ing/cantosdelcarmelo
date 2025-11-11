@@ -426,7 +426,16 @@
  { "title": "Haz Cantar Tu Vida","file": "haz-cantar-tu-vida","lyrics": "lyrics/haz-cantar-tu-vida.txt",    "audio": "audio/haz-cantar-tu-vida.mp3",    "sections": ["Entrada"] },
  { "title": "Santo Continental","file": "santo-continental","lyrics": "lyrics/santo-continental.txt",    "audio": "audio/santo-continental.mp3",    "sections": ["Santo"] },
  { "title": "Cristo está conmigo","file": "cristo-esta-conmigo","lyrics": "lyrics/cristo-esta-conmigo.txt",    "audio": "audio/cristo-esta-conmigo.mp3",    "sections": ["Comunión"] },
- { "title": "Madre de Miserecordia","file": "madre-misaricordia","lyrics": "lyrics/madre-misaricordia.txt",    "audio": "audio/madre-misaricordia.mp3",    "sections": ["Marianas"] }
+ { "title": "Madre de Miserecordia","file": "madre-misaricordia","lyrics": "lyrics/madre-misaricordia.txt",    "audio": "audio/madre-misaricordia.mp3",    "sections": ["Marianas"] },
+{ "title": "Perdon, Señor piedad de mi","file": "perdon-piedad-de-mi","lyrics": "lyrics/perdon-piedad-de-mi.txt",    "audio": "audio/perdon-piedad-de-mi.mp3",    "sections": ["Perdón"] },
+ { "title": "El Señor es mi fortaleza","file": "el-señor-es-mi-fortaleza","lyrics": "lyrics/el-señor-es-mi-fortaleza.txt",    "audio": "audio/el-señor-es-mi-fortaleza.mp3",    "sections": ["Post Aclamación"] },
+ { "title": "Santo (nuevo)","file": "santo-nuevo","lyrics": "lyrics/santo-nuevo.txt",    "audio": "audio/santo-nuevo.mp3",    "sections": ["Santo"] },
+ { "title": "Día y Noche","file": "dia-noche","lyrics": "lyrics/dia-noche.txt",    "audio": "audio/dia-noche.mp3",    "sections": ["Comunión"] },
+ { "title": "Vuelvan los ojos hacia el Señor","file": "vuelvan-los-ojos","lyrics": "lyrics/vuelvan-los-ojos.txt",    "audio": "audio/vuelvan-los-ojos.mp3",    "sections": ["Comunión"] },
+ { "title": "Somos un pueblo que camina","file": "somos-un-pueblo","lyrics": "lyrics/somos-un-pueblo.txt",    "audio": "audio/somos-un-pueblo.mp3",    "sections": ["Entrada"] },
+ { "title": "Arcilla entre sus manos","file": "arcilla","lyrics": "lyrics/arcilla.txt",    "audio": "audio/arcilla.mp3",    "sections": ["Marianas"] },
+ { "title": "Estoy pensando en Dios","file": "estoy-pensando-en-dios","lyrics": "lyrics/estoy-pensando-en-dios.txt",    "audio": "audio/estoy-pensando-en-dios.mp3",    "sections": ["Comunión"] }
+
 
 
 
