@@ -431,7 +431,7 @@
  { "title": "El Señor es mi fortaleza","file": "el-señor-es-mi-fortaleza","lyrics": "lyrics/el-señor-es-mi-fortaleza.txt",    "audio": "audio/el-señor-es-mi-fortaleza.mp3",    "sections": ["Post Aclamación"] },
  { "title": "Santo (nuevo)","file": "santo-nuevo","lyrics": "lyrics/santo-nuevo.txt",    "audio": "audio/santo-nuevo.mp3",    "sections": ["Santo"] },
  { "title": "Día y Noche","file": "dia-noche","lyrics": "lyrics/dia-noche.txt",    "audio": "audio/dia-noche.mp3",    "sections": ["Comunión"] },
- { "title": "Vuelvan los ojos hacia el Señor","file": "vuelvan-los-ojos","lyrics": "lyrics/vuelvan-los-ojos.txt",    "audio": "audio/vuelvan-los-ojos.mp3",    "sections": ["Comunión"] },
+ { "title": "Vuelvan los ojos hacia el Señor","file": "vuelva-los-ojos","lyrics": "lyrics/vuelva-los-ojos.txt",    "audio": "audio/vuelva-los-ojos.mp3",    "sections": ["Comunión"] },
  { "title": "Somos un pueblo que camina","file": "somos-un-pueblo","lyrics": "lyrics/somos-un-pueblo.txt",    "audio": "audio/somos-un-pueblo.mp3",    "sections": ["Entrada"] },
  { "title": "Arcilla entre sus manos","file": "arcilla","lyrics": "lyrics/arcilla.txt",    "audio": "audio/arcilla.mp3",    "sections": ["Marianas"] },
  { "title": "Estoy pensando en Dios","file": "estoy-pensando-en-dios","lyrics": "lyrics/estoy-pensando-en-dios.txt",    "audio": "audio/estoy-pensando-en-dios.mp3",    "sections": ["Comunión"] }
