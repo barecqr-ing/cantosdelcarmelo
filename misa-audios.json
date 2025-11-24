@@ -1,13 +1,14 @@
 [
-"audio/canta-aleluya.mp3",
 "audio/canta-iglesia.mp3",
-"audio/cordero-bianchi.mp3",
-"audio/oh-Señor-ten-piedad.mp3",
-"audio/contigo-virgen-del-carmen.mp3",
+  "audio/oh-Señor-ten-piedad.mp3",
+  "audio/vamos-con-alegria.mp3",
+"audio/canta-aleluya.mp3",
+  "audio/canten-con-gozo.mp3",
+"audio/alabe-todo-el-mundo.mp3",  
 "audio/te-presemtamos-la-vida.mp3",
-"audio/alabe-todo-el-mundo.mp3",
-"audio/santo-fugas.mp3",
+"audio/santo-fugas.mp3",  
+  "audio/cordero-bianchi.mp3",
 "audio/señor-envianos.mp3",
 "audio/el-testigo.mp3",
-"audio/canten-con-gozo.mp3"
+  "audio/contigo-virgen-del-carmen.mp3"
 ]
