@@ -434,10 +434,13 @@
  { "title": "Vuelvan los ojos hacia el Señor","file": "vuelva-los-ojos","lyrics": "lyrics/vuelva-los-ojos.txt",    "audio": "audio/vuelva-los-ojos.mp3",    "sections": ["Comunión"] },
  { "title": "Somos un pueblo que camina","file": "somos-un-pueblo","lyrics": "lyrics/somos-un-pueblo.txt",    "audio": "audio/somos-un-pueblo.mp3",    "sections": ["Entrada"] },
  { "title": "Arcilla entre sus manos","file": "arcilla","lyrics": "lyrics/arcilla.txt",    "audio": "audio/arcilla.mp3",    "sections": ["Marianas"] },
- { "title": "Estoy pensando en Dios","file": "estoy-pensando-en-dios","lyrics": "lyrics/estoy-pensando-en-dios.txt",    "audio": "audio/estoy-pensando-en-dios.mp3",    "sections": ["Comunión"] }
-
-
-
+ { "title": "Estoy pensando en Dios","file": "estoy-pensando-en-dios","lyrics": "lyrics/estoy-pensando-en-dios.txt",    "audio": "audio/estoy-pensando-en-dios.mp3",    "sections": ["Comunión"] },
+ { "title": "Canten con gozo","file": "canten-con-gozo","lyrics": "lyrics/canten-con-gozo.txt",    "audio": "audio/canten-con-gozo.mp3",    "sections": ["Antifona"] },
+ { "title": "Alabe todo el mundo","file": "alabe-todo-el-mundo","lyrics": "lyrics/alabe-todo-el-mundo.txt",    "audio": "audio/alabe-todo-el-mundo.mp3",    "sections": ["Post Aclamación"] },
+ { "title": "Santo de las Fugas","file": "santo-fugas","lyrics": "lyrics/santo-fugas.txt",    "audio": "audio/santo-fugas.mp3",    "sections": ["Santo"] },
+ { "title": "Señor envíanos","file": "señor-envianos","lyrics": "lyrics/señor-envianos.txt",    "audio": "audio/señor-envianos.mp3",    "sections": ["Comunión"] },
+ { "title": "El testigo","file": "el-testigo","lyrics": "lyrics/el-testigo.txt",    "audio": "audio/el-testigo.mp3",    "sections": ["Comunión"] },
+ { "title": "Canten con gozo","file": "canten-con-gozo","lyrics": "lyrics/canten-con-gozo.txt",    "audio": "audio/canten-con-gozo.mp3",    "sections": ["Post Aclamación"] }
 
 
 ]
