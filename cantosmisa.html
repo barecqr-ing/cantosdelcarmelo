@@ -11,33 +11,50 @@
   <div id="lista-audios"></div>
 
   <script>
-    fetch('misa-audios.json')
-      .then(response => response.json())
-      .then(audios => {
-        const lista = document.getElementById('lista-audios');
+<script>
+  fetch('misa-audios.json')
+    .then(response => response.json())
+    .then(audios => {
+      const lista = document.getElementById('lista-audios');
+      const audioElements = []; // Aquí guardaremos todos los <audio>
 
-        audios.forEach(audioPath => {
-          const div = document.createElement('div');
-          div.className = 'audio-item';
+      audios.forEach((audioPath, index) => {
+        const div = document.createElement('div');
+        div.className = 'audio-item';
 
-          const nombreArchivo = audioPath.split('/').pop();
+        const nombreArchivo = audioPath.split('/').pop();
 
-          const titulo = document.createElement('p');
-          titulo.textContent = nombreArchivo;
-          div.appendChild(titulo);
+        const titulo = document.createElement('p');
+        titulo.textContent = nombreArchivo;
+        div.appendChild(titulo);
 
-          const audio = document.createElement('audio');
-          audio.controls = true;
-          audio.src = audioPath;
-          div.appendChild(audio);
+        const audio = document.createElement('audio');
+        audio.controls = true;
+        audio.src = audioPath;
+        div.appendChild(audio);
 
-          lista.appendChild(div);
-        });
-      })
-      .catch(error => {
-        document.getElementById('lista-audios').textContent = 'Error cargando los audios.';
-        console.error(error);
+        // Guardamos el audio en el arreglo
+        audioElements.push(audio);
+
+        lista.appendChild(div);
       });
+
+      // Reproducción automática: cuando termina uno, pasa al siguiente
+      audioElements.forEach((audio, i) => {
+        audio.addEventListener('ended', () => {
+          const siguiente = audioElements[i + 1];
+          if (siguiente) {
+            siguiente.play(); // Reproducir la siguiente canción
+          }
+        });
+      });
+
+    })
+    .catch(error => {
+      document.getElementById('lista-audios').textContent = 'Error cargando los audios.';
+      console.error(error);
+    });
+</script>
   </script>
 </body>
 </html>
