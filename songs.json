@@ -81,6 +81,15 @@
       "Ofertorio"
     ]
   },
+   {
+    "title": "Tomad Señor y Recibid",
+    "file": "TOMAD SEÑOR Y RECIBID",
+    "lyrics": "lyrics/TOMAD SEÑOR Y RECIBID.txt",
+    "audio": "audio/TOMAD SEÑOR Y RECIBID.mp3",
+    "sections": [
+      "Ofertorio"
+    ]
+  },
   {
     "title": "Cordero Aravena",
     "file": "cordero-aravena",
