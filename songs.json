@@ -1,5 +1,9 @@
 [
-  {
+   { "title": "Gloria en el cielo (Fones)","file": "gloria_en_el_cielo","lyrics": "lyrics/gloria_en_el_cielo.txt",    "audio": "gloria_en_el_cielo.mp3",    "sections": ["Gloria"] },
+ { "title": "María mirame","file": "maria_mirame","lyrics": "lyrics/maria_mirame.txt",    "audio": "maria_mirame.mp3",    "sections": ["Marianas"] },
+ { "title": "No podemos caminar","file": "no_podemos_caminar","lyrics": "lyrics/no_podemos_caminar.txt",    "audio": "no_podemos_caminar.mp3",    "sections": ["Comunión"] },
+ { "title": "Oh Señor","file": "oh_sennor","lyrics": "lyrics/oh_sennor.txt",    "audio": "oh_sennor.mp3",    "sections": ["Perdón"] },
+{
     "title": "Abre tu jardín",
     "file": "abre-tu-jardin",
     "lyrics": "lyrics/abre-tu-jardin.txt",
