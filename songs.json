@@ -449,7 +449,8 @@
  { "title": "Santo de las Fugas","file": "santo-fugas","lyrics": "lyrics/santo-fugas.txt",    "audio": "audio/santo-fugas.mp3",    "sections": ["Santo"] },
  { "title": "Señor envíanos","file": "señor-envianos","lyrics": "lyrics/señor-envianos.txt",    "audio": "audio/señor-envianos.mp3",    "sections": ["Comunión"] },
  { "title": "El testigo","file": "el-testigo","lyrics": "lyrics/el-testigo.txt",    "audio": "audio/el-testigo.mp3",    "sections": ["Comunión"] },
- { "title": "Canten con gozo","file": "canten-con-gozo","lyrics": "lyrics/canten-con-gozo.txt",    "audio": "audio/canten-con-gozo.mp3",    "sections": ["Post Aclamación"] }
+ { "title": "Canten con gozo","file": "canten-con-gozo","lyrics": "lyrics/canten-con-gozo.txt",    "audio": "audio/canten-con-gozo.mp3",    "sections": ["Post Aclamación"] },
+   { "title": "Aleluya - Busca Primero","file": "busca-primero","lyrics": "lyrics/busca-primero.txt",    "audio": "busca-primero.mp3",    "sections": ["Aclamación"] }
 
 
 ]
